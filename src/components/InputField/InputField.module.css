@@ -1,0 +1,27 @@
+.inputContainer {
+    margin: 5px;
+    background-color: #53575a55;
+    height: 39.36px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 10px;
+  }
+  
+  .input {
+    height: 39.36px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+  }
+  .input::placeholder {
+    color: #838296;
+  }
+  
+  .input:hover,
+  .input:focus {
+    border: none;
+    outline: none;
+  }

@@ -1,0 +1,50 @@
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #53575a;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  width: 167px;
+}
+
+.converyerText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.devider {
+  opacity: 0.72;
+  border: 1px solid #e8e8e8;
+}
+
+.linksContainer {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.link {
+  font-weight: 600;
+  font-size: 15.998px;
+  line-height: 19px;
+  color: #53575a;
+  cursor: context-menu;
+  width: 100%;
+  height: 39.5px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.link:hover {
+  background-color: #f2f2f2;
+}

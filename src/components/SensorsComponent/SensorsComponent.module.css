@@ -1,0 +1,14 @@
+.squareContainer {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .square {
+    background: #53575a;
+    width: 22.81px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 2px;
+  }
+  
