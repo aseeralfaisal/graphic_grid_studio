@@ -30,20 +30,22 @@ const Header = ({ workSpaces, setWorkSpaces }) => {
                     <DeviderIcon />
                 </div>
 
-                <div className={styles.arrowBtn} onClick={() => handleScrollInline(elementRef, -160)}>
-                    <LeftArrowIcon />
-                </div>
-                <div className={styles.buttonContainer} id='buttonContainer' ref={elementRef}>
-                    {workSpaces.map((workspace, idx) => {
-                        return (
-                            <div key={idx}>
-                                <MaterialButton width={150} title={`Workspace-${workspace}`} />
-                            </div>
-                        )
-                    })}
-                </div>
-                <div className={styles.arrowBtn} onClick={() => handleScrollInline(elementRef, 160)}>
-                    <RightArrowIcon />
+                <div className={styles.workspaceContainer}>
+                    <div className={styles.arrowBtn} onClick={() => handleScrollInline(elementRef, -160)}>
+                        <LeftArrowIcon />
+                    </div>
+                    <div className={styles.buttonContainer} id='buttonContainer' ref={elementRef}>
+                        {workSpaces.map((workspace, idx) => {
+                            return (
+                                <div key={idx}>
+                                    <MaterialButton width={150} title={`Workspace-${workspace}`} />
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className={styles.arrowBtn} onClick={() => handleScrollInline(elementRef, 160)}>
+                        <RightArrowIcon />
+                    </div>
                 </div>
 
                 <div className={styles.headerIconsContainer}>

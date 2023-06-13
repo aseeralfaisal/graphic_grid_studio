@@ -69,20 +69,22 @@ function App() {
   return (
     <>
       <Header workSpaces={workSpaces} setWorkSpaces={setWorkSpaces} />
-      <ResponsiveGridLayout
-        layouts={{ lg: layout }}
-        className='layout'
-        autoSize={true}
-        isDraggable={true}
-        isResizable={true}
-        margin={[30, 30]}
-      >
-        {gridItems.map((item, i) => (
-          <div key={item.id} className='grid-item'>
-            <div>{item.element}</div>
-          </div>
-        ))}
-      </ResponsiveGridLayout>
+      <div style={{ marginInline: 5, marginBlock: 70 }}>
+        <ResponsiveGridLayout
+          layouts={{ lg: layout }}
+          className='layout'
+          autoSize={true}
+          isDraggable={true}
+          isResizable={true}
+          margin={[30, 30]}
+        >
+          {gridItems.map((item, i) => (
+            <div key={item.id} className='grid-item'>
+              <div>{item.element}</div>
+            </div>
+          ))}
+        </ResponsiveGridLayout>
+      </div>
     </>
   );
 }
