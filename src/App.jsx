@@ -38,6 +38,24 @@ function App() {
     { title: "Rear Lock Status" },
     { title: "Actual Velocity" },
   ])
+  const [carrier] = useState([
+    { title: "Mode", status: 'Auto', color: colors.gray },
+    { title: "Status", status: 'Idle', color: colors.gray },
+    { title: "Steps", status: 'Not running', color: colors.gray },
+    { title: "Job No.", status: '96', color: colors.gray },
+    { title: "Position", status: 'Completed', color: colors.gray },
+    { title: "Target", status: '0mm', color: colors.gray },
+    { title: "Position ID", status: '01', color: colors.gray },
+    { title: "Speed", status: '0 rpm I 0 m/s', color: colors.gray },
+    {
+      title: "PLC Pallet Exists", status: <div style={{ marginLeft: 5 }}>
+        <div className="square" style={{ textAlign: 'center' }}>P</div>
+      </div>
+    },
+    { title: "Front Lock Status" },
+    { title: "Rear Lock Status" },
+    { title: "Actual Velocity" },
+  ])
 
   const [workSpaces, setWorkSpaces] = useState([1, 2])
 
@@ -53,7 +71,10 @@ function App() {
       id: 2, element: <MaterialCard width='800px' title="Panel 3D"><BabylonScene /></MaterialCard>
     },
     {
-      id: 3, element: <MaterialCard isHeaderUnderlined title='P. Id: 11 Commands' width='307px'>
+      id: 3, element: <ConveyerCard isHeaderUnderlined isConveyer={false} title='Carrier Props' items={carrier} />
+    },
+    {
+      id: 4, element: <MaterialCard isHeaderUnderlined title='P. Id: 11 Commands' width='307px'>
         <InputField startIcon={<SearchIcon />} placeholder="Any Room" />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, padding: 8 }}>
           <MaterialButton isbordered={false} title='Bring Car' color='#125598' hoverColor="#0e4475" />
