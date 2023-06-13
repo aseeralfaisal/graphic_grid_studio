@@ -68,10 +68,10 @@ function App() {
       </div>
     },
     {
-      id: 2, element: <MaterialCard width='800px' title="Panel 3D"><BabylonScene /></MaterialCard>
+      id: 2, element: <ConveyerCard isHeaderUnderlined isConveyer={false} title='Carrier Props' items={carrier} />
     },
     {
-      id: 3, element: <ConveyerCard isHeaderUnderlined isConveyer={false} title='Carrier Props' items={carrier} />
+      id: 3, element: <MaterialCard width='800px' title="Panel 3D"><BabylonScene /></MaterialCard>
     },
     {
       id: 4, element: <MaterialCard isHeaderUnderlined title='P. Id: 11 Commands' width='307px'>
