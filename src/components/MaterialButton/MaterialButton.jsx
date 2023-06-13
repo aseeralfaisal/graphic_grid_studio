@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Hidden } from '@mui/material';
 
 const MaterialButton = ({ color = '#53575A', title = "Workspace - 1", width, hoverColor, isbordered = true, onClick }) => {
     return (
@@ -7,6 +7,7 @@ const MaterialButton = ({ color = '#53575A', title = "Workspace - 1", width, hov
             variant="contained"
             sx={{
                 background: color,
+                maxWidth: 150,
                 border: '2px solid transparent',
                 width: width && width,
                 '&:hover': {

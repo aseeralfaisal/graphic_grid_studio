@@ -12,6 +12,7 @@ import styles from './Header.module.css'
 import LeftArrowIcon from '../../assets/leftarrow.icon';
 import RightArrowIcon from '../../assets/rightarrow.icon'
 import WorkSpaceMenu from '../WorkSpaceMenu/WorkSpaceMenu';
+import { ClickAwayListener } from '@mui/material';
 
 const Header = ({ workSpaces, setWorkSpaces }) => {
     const [showWorkSpaceMenu, setShowWorkSpaceMenu] = useState(false)
@@ -49,10 +50,12 @@ const Header = ({ workSpaces, setWorkSpaces }) => {
                 </div>
 
                 <div className={styles.headerIconsContainer}>
-                    <div onClick={() => setShowWorkSpaceMenu(!showWorkSpaceMenu)}>
-                        <EditIcon />
-                        {showWorkSpaceMenu && <WorkSpaceMenu workSpaces={workSpaces} setWorkSpaces={setWorkSpaces} />}
-                    </div>
+                    <ClickAwayListener onClickAway={() => setShowWorkSpaceMenu(false)}>
+                        <div onClick={() => setShowWorkSpaceMenu(!showWorkSpaceMenu)}>
+                            <EditIcon />
+                            {showWorkSpaceMenu && <WorkSpaceMenu workSpaces={workSpaces} setWorkSpaces={setWorkSpaces} />}
+                        </div>
+                    </ClickAwayListener>
                     <div>
                         <WifiIcon />
                     </div>

@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import InputField from '../InputField/InputField'
 import MaterialButton from '../MaterialButton/MaterialButton'
+import { ClickAwayListener } from '@mui/material'
 
 const style = {
   position: 'absolute',
@@ -34,6 +35,7 @@ const WorkSpaceMenu = ({ workSpaces, setWorkSpaces }) => {
     setShowModal(false)
   }
 
+
   return (
     <>
       <Modal open={showModal} onClose={() => setShowModal(true)} >
@@ -52,7 +54,7 @@ const WorkSpaceMenu = ({ workSpaces, setWorkSpaces }) => {
         </Box>
       </Modal>
 
-      <div className={styles.container}>
+      {<div className={styles.container}>
         <div onClick={(e) => {
           e.stopPropagation()
           e.preventDefault()
@@ -74,6 +76,7 @@ const WorkSpaceMenu = ({ workSpaces, setWorkSpaces }) => {
           <DeleteIcon />
         </div>
       </div>
+      }
     </>
   )
 }
