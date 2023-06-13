@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import MaterialButton from '../MaterialButton/MaterialButton';
 import MenuIcon from '../../assets/menu.icon';
 import DeviderIcon from '../../assets/devider.icon';
@@ -10,7 +11,6 @@ import UserIcon from '../../assets/user.icon';
 import styles from './Header.module.css'
 import LeftArrowIcon from '../../assets/leftarrow.icon';
 import RightArrowIcon from '../../assets/rightarrow.icon'
-import { useRef, useState } from 'react';
 import WorkSpaceMenu from '../WorkSpaceMenu/WorkSpaceMenu';
 
 const Header = ({ workSpaces, setWorkSpaces }) => {

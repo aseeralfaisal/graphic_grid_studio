@@ -1,16 +1,18 @@
 import styles from './InputField.module.css'
-import SearchIcon from '../../assets/search.icon'
 import { useState } from 'react'
 
-const InputField = () => {
-    const [inputVal, setInputVal] = useState('')
+const InputField = ({ startIcon, placeholder, color, width, value, setValue }) => {
     return (
-        <div className={styles.inputContainer}>
-            <SearchIcon />
+        <div className={styles.inputContainer} style={{ backgroundColor: color ? color : null, width: width && width }}>
+            {startIcon ? startIcon : null}
             <input className={styles.input}
-                value={inputVal}
-                onChange={(event) => setInputVal(event.target.value)}
-                type="text" placeholder='Any Room' />
+                value={value}
+                onChange={(event) => {
+                    event.preventDefault()
+                    setValue(event.target.value)
+                }}
+                type="text" placeholder={placeholder}
+            />
         </div>
     )
 }

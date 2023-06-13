@@ -11,6 +11,7 @@ import Header from './components/Header/Header'
 import MaterialButton from './components/MaterialButton/MaterialButton'
 import colors from './colors';
 import './App.css'
+import SearchIcon from './assets/search.icon';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -53,7 +54,7 @@ function App() {
     },
     {
       id: 3, element: <MaterialCard isHeaderUnderlined title='P. Id: 11 Commands' width='307px'>
-        <InputField />
+        <InputField startIcon={<SearchIcon />} placeholder="Any Room" />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, padding: 8 }}>
           <MaterialButton isbordered={false} title='Bring Car' color='#125598' hoverColor="#0e4475" />
           <MaterialButton isbordered={false} title='Exit Car' color='#53575A' hoverColor="#393d49" />

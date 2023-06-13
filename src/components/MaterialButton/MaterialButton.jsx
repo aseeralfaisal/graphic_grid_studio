@@ -1,8 +1,9 @@
 import { Button } from '@mui/material';
 
-const MaterialButton = ({ color = '#53575A', title = "Workspace - 1", width, hoverColor, isbordered = true }) => {
+const MaterialButton = ({ color = '#53575A', title = "Workspace - 1", width, hoverColor, isbordered = true, onClick }) => {
     return (
         <Button
+            onClick={onClick}
             variant="contained"
             sx={{
                 background: color,
