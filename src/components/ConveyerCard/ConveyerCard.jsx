@@ -1,7 +1,24 @@
+import { useEffect, useState } from 'react';
 import MaterialCard from '../MaterialCard/MaterialCard'
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './ConveyerCard.module.css'
+import { setLayout } from '../../store/slice';
 
 const ConveyerCard = ({ items, isConveyer, title, isHeaderUnderlined }) => {
+    const dispatch = useDispatch()
+    const showChildren = useSelector(state => state.slice.showChildren)
+    const layout = useSelector((state) => state.slice.layout)
+
+    useEffect(() => {
+        dispatch(() => {
+          const updatedLayout = [...layout];
+          updatedLayout[0] = { ...updatedLayout[0], h: showChildren ? 6.5 : 5 };
+          return dispatch(setLayout(updatedLayout));
+        });
+      }, [showChildren, dispatch]);
+
+
+
     return (
         <MaterialCard title={title} isHeaderUnderlined={isHeaderUnderlined}>
             <div style={{ margin: 10 }}>

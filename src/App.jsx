@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import ConveyerCard from './components/ConveyerCard/ConveyerCard';
 import MaterialCard from './components/MaterialCard/MaterialCard'
@@ -9,6 +9,8 @@ import Header from './components/Header/Header'
 import MaterialButton from './components/MaterialButton/MaterialButton'
 import colors from './colors';
 import './App.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { setLayout } from './store/slice';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -19,6 +21,7 @@ const PLCComponent = () => (
 )
 
 function App() {
+  const dispatch = useDispatch()
   const [conveyerItems] = useState([
     { title: "Mode", status: 'Auto', color: colors.green },
     { title: "Status", status: 'Waiting', color: colors.orange },
@@ -36,6 +39,11 @@ function App() {
     { title: "Rear Lock Status" },
     { title: "Actual Velocity" },
   ])
+
+  const [workSpaces, setWorkSpaces] = useState([1, 2, 3, 4, 5])
+
+  const layout = useSelector((state) => state.slice.layout)
+
   const gridItems = [
     {
       id: 1, element: <div data-grid={{ autoSize: true }}>
@@ -58,13 +66,6 @@ function App() {
     },
   ];
 
-  const layout = [
-    { i: '1', x: 0, y: 0, w: 3, h: 5, minW: 2, minH: 6, autoSize: true },
-    { i: '2', x: 3, y: 0, w: 5.5, h: 2.5, minW: 4, minH: 2 },
-    { i: '3', x: 3, y: 0, w: 3, h: 2, minW: 2, minH: 1.5 },
-  ];
-
-  const [workSpaces, setWorkSpaces] = useState([1, 2, 3, 4, 5])
 
   return (
     <>
@@ -74,6 +75,7 @@ function App() {
           layouts={{ lg: layout }}
           className='layout'
           autoSize={true}
+          onLayoutChange={(layout) => dispatch(setLayout(layout))}
           isDraggable={true}
           isResizable={true}
           margin={[30, 30]}
