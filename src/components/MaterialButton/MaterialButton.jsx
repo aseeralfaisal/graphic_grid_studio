@@ -13,6 +13,9 @@ const MaterialButton = ({ color = '#53575A', title = "Workspace - 1", width, hov
                     border: isbordered && '2px solid #FFBF3C',
                     boxShadow: 'none'
                 },
+                '&:focus': {
+                    border: '2px solid #FFBF3C',
+                },
                 boxShadow: 'none',
                 '& .MuiButton-label': {
                     color: '#ffffff' // Optional: Set the text color to white

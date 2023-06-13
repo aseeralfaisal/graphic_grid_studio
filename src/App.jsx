@@ -38,7 +38,7 @@ function App() {
     { title: "Actual Velocity" },
   ])
 
-  const [workSpaces, setWorkSpaces] = useState([1, 2, 3, 4, 5])
+  const [workSpaces, setWorkSpaces] = useState([1, 2])
 
   const layout = useSelector((state) => state.slice.layout)
 

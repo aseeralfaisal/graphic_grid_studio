@@ -38,7 +38,7 @@ const Header = ({ workSpaces, setWorkSpaces }) => {
                         {workSpaces.map((workspace, idx) => {
                             return (
                                 <div key={idx}>
-                                    <MaterialButton width={150} title={`Workspace-${workspace}`} />
+                                    <MaterialButton width={150} title={`Workspace-${idx + 1}`} />
                                 </div>
                             )
                         })}
