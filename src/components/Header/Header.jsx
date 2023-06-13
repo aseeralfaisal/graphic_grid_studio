@@ -10,11 +10,18 @@ import UserIcon from '../../assets/user.icon';
 import styles from './Header.module.css'
 import LeftArrowIcon from '../../assets/leftarrow.icon';
 import RightArrowIcon from '../../assets/rightarrow.icon'
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import WorkSpaceMenu from '../WorkSpaceMenu/WorkSpaceMenu';
 
 const Header = ({ workSpaces, setWorkSpaces }) => {
     const [showWorkSpaceMenu, setShowWorkSpaceMenu] = useState(false)
+
+    const elementRef = useRef(null)
+
+    const handleScrollInline = (element, step) => {
+        element.current.scrollLeft += step
+    };
+
     return (
         <>
             <div className={styles.headerContainer}>
@@ -23,17 +30,21 @@ const Header = ({ workSpaces, setWorkSpaces }) => {
                     <DeviderIcon />
                 </div>
 
-                <LeftArrowIcon />
-                <div className={styles.buttonContainer}>
+                <div className={styles.arrowBtn} onClick={() => handleScrollInline(elementRef, -160)}>
+                    <LeftArrowIcon />
+                </div>
+                <div className={styles.buttonContainer} id='buttonContainer' ref={elementRef}>
                     {workSpaces.map((workspace, idx) => {
                         return (
                             <div key={idx}>
-                                {workSpaces.length < 7 && <MaterialButton title={`Workspace-${idx + 1}`} />}
+                                <MaterialButton width={150} title={`Workspace-${workspace}`} />
                             </div>
                         )
                     })}
                 </div>
-                <RightArrowIcon />
+                <div className={styles.arrowBtn} onClick={() => handleScrollInline(elementRef, 160)}>
+                    <RightArrowIcon />
+                </div>
 
                 <div className={styles.headerIconsContainer}>
                     <div onClick={() => setShowWorkSpaceMenu(!showWorkSpaceMenu)}>
@@ -68,7 +79,7 @@ const Header = ({ workSpaces, setWorkSpaces }) => {
                     <DownArrowIcon />
                     <UserIcon />
                 </div>
-            </div>
+            </div >
         </>
     );
 };

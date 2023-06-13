@@ -6,7 +6,7 @@ import SettingsIcon from '../../assets/settings.icon'
 import CloseIcon from '../../assets/close.icon'
 import DownArrowIcon from '../../assets/downarrow.icon'
 
-const MaterialCard = ({ title, children, width = "297.86px", isInnerCard = false, isHeaderUnderlined = false }) => {
+const MaterialCard = ({ title, children, width = "100%", height = "100%", isInnerCard = false, isHeaderUnderlined = false }) => {
 
     const [click, setClick] = useState(false)
     const [showItems, setShowItems] = useState(false)
@@ -17,7 +17,7 @@ const MaterialCard = ({ title, children, width = "297.86px", isInnerCard = false
     }
 
     return (
-        <div className={styles.materialCardContainer} style={{ width }} >
+        <div className={styles.materialCardContainer}>
             <div className={styles.cardHeader}>
                 <div className={styles.cardHeaderTitle}>
                     {title}
@@ -43,9 +43,6 @@ const MaterialCard = ({ title, children, width = "297.86px", isInnerCard = false
                 (showItems ? children : null)
                 :
                 children}
-            {!isInnerCard && <div className={styles.pathIconContainer}>
-                <PathIcon />
-            </div>}
         </div>
     )
 }

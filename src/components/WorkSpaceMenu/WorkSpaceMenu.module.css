@@ -10,4 +10,5 @@
     border-radius: 5px;
     margin-left: -80px;
     margin-top: 10px;
+    z-index: 10;
 }

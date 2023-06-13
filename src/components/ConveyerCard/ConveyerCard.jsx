@@ -22,7 +22,7 @@ const ConveyerCard = ({ items, isConveyer, title, isHeaderUnderlined }) => {
                 })
                 }
             </div>
-            {isConveyer && <div style={{ margin: 5 }}>
+            {isConveyer && <div style={{ margin: 5, display: 'grid', gap: 5 }}>
                 <MaterialCard isInnerCard title="Conveyer Commands" width='286px' />
                 <MaterialCard isInnerCard title="Conveyer Config" width='286px' />
                 <MaterialCard isInnerCard title="Links" width='286px'>
