@@ -9,9 +9,9 @@ import BabylonScene from './components/BabylonScene/BabylonScene';
 import InputField from './components/InputField/InputField'
 import Header from './components/Header/Header'
 import MaterialButton from './components/MaterialButton/MaterialButton'
+import SearchIcon from './assets/search.icon';
 import colors from './colors';
 import './App.css'
-import SearchIcon from './assets/search.icon';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
