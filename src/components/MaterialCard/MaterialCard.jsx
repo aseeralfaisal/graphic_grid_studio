@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import styles from './MaterialCard.module.css'
 import InfoIcon from '../../assets/info.icon'
 import SettingsIcon from '../../assets/settings.icon'
 import CloseIcon from '../../assets/close.icon'
 import DownArrowIcon from '../../assets/downarrow.icon'
 import { useDispatch, useSelector } from 'react-redux'
 import { setShowChildren } from '../../store/slice'
+import styles from './MaterialCard.module.css'
 
 const MaterialCard = ({ title, children, width = "100%", height = "100%", isInnerCard = false, isHeaderUnderlined = false }) => {
     const dispatch = useDispatch()
@@ -17,8 +17,6 @@ const MaterialCard = ({ title, children, width = "100%", height = "100%", isInne
         setClick(!click)
         dispatch(setShowChildren(!showChildren))
     }
-    
-    
 
     return (
         <div className={styles.materialCardContainer}>
@@ -41,7 +39,7 @@ const MaterialCard = ({ title, children, width = "100%", height = "100%", isInne
                         <CloseIcon />
                     </div>}
             </div>
-            {isHeaderUnderlined && <div style={{ background: "#FFBF3C", width: '50%', height: 4 }} />}
+            {isHeaderUnderlined && <div className={styles.underlineAnimated}></div>}
             {isInnerCard
                 ?
                 (showChildren ? children : <></>)

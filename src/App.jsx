@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLayout } from './store/slice';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import ConveyerCard from './components/ConveyerCard/ConveyerCard';
 import MaterialCard from './components/MaterialCard/MaterialCard'
@@ -9,16 +11,8 @@ import Header from './components/Header/Header'
 import MaterialButton from './components/MaterialButton/MaterialButton'
 import colors from './colors';
 import './App.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { setLayout } from './store/slice';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
-
-const PLCComponent = () => (
-  <div style={{ marginLeft: 5 }}>
-    <div className="square" style={{ textAlign: 'center' }}>P</div>
-  </div>
-)
 
 function App() {
   const dispatch = useDispatch()
@@ -34,7 +28,11 @@ function App() {
     { title: "Car Weight" },
     { title: "Job Status", status: 'Unknown', color: colors.gray },
     { title: "Active Shelf", status: 0, color: colors.gray },
-    { title: "PLC Pallet Exists", status: <PLCComponent /> },
+    {
+      title: "PLC Pallet Exists", status: <div style={{ marginLeft: 5 }}>
+        <div className="square" style={{ textAlign: 'center' }}>P</div>
+      </div>
+    },
     { title: "Front Lock Status" },
     { title: "Rear Lock Status" },
     { title: "Actual Velocity" },

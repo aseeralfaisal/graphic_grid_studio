@@ -31,3 +31,9 @@
   justify-content: flex-end;
   padding: 5px;
 }
+
+.underlineAnimated {
+  background-color: #ffbf3c;
+  width: 50%;
+  height: 4;
+}
